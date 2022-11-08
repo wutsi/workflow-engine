@@ -4,7 +4,7 @@
 
     <artifactId>workflow-engine</artifactId>
     <groupId>com.wutsi.workflow</groupId>
-    <version>1.0.1</version>
+    <version>1.0.2-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>workflow-engine</name>
@@ -62,7 +62,7 @@
 
     <scm>
         <developerConnection>scm:git:https://github.com/wutsi/workflow-engine.git</developerConnection>
-        <tag>workflow-engine-1.0.1</tag>
+        <tag>HEAD</tag>
     </scm>
     <distributionManagement>
         <repository>
