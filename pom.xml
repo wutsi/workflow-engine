@@ -24,7 +24,7 @@
         <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
 
         <wutsi-platform-core.version>0.0.183</wutsi-platform-core.version>
-        <wutsi-membership-access.version>1.0.12</wutsi-membership-access.version>
+        <wutsi-membership-access.version>1.0.13</wutsi-membership-access.version>
         <wutsi-regulation.version>1.0.3</wutsi-regulation.version>
     </properties>
 

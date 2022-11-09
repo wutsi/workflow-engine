@@ -7,7 +7,7 @@ import com.wutsi.platform.core.error.exception.ConflictException
 import com.wutsi.workflow.Rule
 import com.wutsi.workflow.error.ErrorURN
 
-class AccountShouldNotBeRegistered(
+class PhoneNumberShouldNotBeAlreadyAssigned(
     private val phoneNumber: String,
     private val membershipAccess: MembershipAccessApi
 ) : Rule {
@@ -21,7 +21,10 @@ class AccountShouldNotBeRegistered(
         if (accounts.isNotEmpty()) {
             throw ConflictException(
                 error = Error(
-                    code = ErrorURN.MEMBER_ALREADY_REGISTERED.urn
+                    code = ErrorURN.PHONE_NUMBER_ALREADY_ASSIGNED.urn,
+                    data = mapOf(
+                        "phone-number" to phoneNumber
+                    )
                 )
             )
         }
