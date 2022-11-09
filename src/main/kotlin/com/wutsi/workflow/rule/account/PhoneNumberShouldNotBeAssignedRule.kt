@@ -7,7 +7,7 @@ import com.wutsi.platform.core.error.exception.ConflictException
 import com.wutsi.workflow.Rule
 import com.wutsi.workflow.error.ErrorURN
 
-class PhoneNumberShouldNotBeAlreadyAssigned(
+class PhoneNumberShouldNotBeAssignedRule(
     private val phoneNumber: String,
     private val membershipAccess: MembershipAccessApi
 ) : Rule {
