@@ -5,7 +5,7 @@ import com.wutsi.platform.core.stream.EventStream
 abstract class AbstractWorkflow<T>(private val eventStream: EventStream) : Workflow {
 
     protected abstract fun getEventType(): String?
-    protected abstract fun toMemberEventPayload(context: WorkflowContext): T?
+    protected abstract fun toEventPayload(context: WorkflowContext): T?
     protected abstract fun getValidationRules(context: WorkflowContext): RuleSet
     protected abstract fun doExecute(context: WorkflowContext)
 
@@ -14,7 +14,7 @@ abstract class AbstractWorkflow<T>(private val eventStream: EventStream) : Workf
         doExecute(context)
         val urn = getEventType()
         if (urn != null) {
-            toMemberEventPayload(context)?.let {
+            toEventPayload(context)?.let {
                 eventStream.publish(urn, it)
             }
         }
