@@ -1,5 +1,5 @@
 package com.wutsi.workflow
 
-interface Workflow {
-    fun execute(context: WorkflowContext)
+interface Workflow<Req, Resp> {
+    fun execute(context: WorkflowContext<Req, Resp>)
 }

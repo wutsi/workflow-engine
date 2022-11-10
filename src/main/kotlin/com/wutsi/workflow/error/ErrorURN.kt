@@ -14,7 +14,14 @@ enum class ErrorURN(val urn: String) {
 
     PHONE_NUMBER_ALREADY_ASSIGNED("urn:wutsi:error:phone-number-already-assigned"),
 
+    PICTURE_LIMIT_REACHED("urn:wutsi:error:picture-limit-reached"),
+
+    PRODUCT_NOT_FOUND("urn:wutsi:error:product-not-found"),
+    PRODUCT_NOT_OWNER("urn:wutsi:error:product-not-owner"),
+    PRODUCT_LIMIT_REACHED("urn:wutsi:error:product-limit-reached"),
+
     STORE_NOT_ACTIVE("urn:wutsi:error:store-not-active"),
     STORE_NOT_SUPPORTED_IN_COUNTRY("urn:wutsi:error:store-not-supported-in-country"),
-    STORE_NOT_FOUND("urn:wutsi:error:store-not-found")
+    STORE_NOT_FOUND("urn:wutsi:error:store-not-found"),
+    STORE_NOT_OWNER("urn:wutsi:error:store-not-owner")
 }

@@ -4,18 +4,18 @@ import com.wutsi.membership.access.dto.Account
 import com.wutsi.platform.core.error.Error
 import com.wutsi.platform.core.error.exception.ConflictException
 import com.wutsi.regulation.CountryNotSupportedException
-import com.wutsi.regulation.CountryRegulations
+import com.wutsi.regulation.RegulationEngine
 import com.wutsi.workflow.Rule
 import com.wutsi.workflow.error.ErrorURN
 
 class CountryShouldSupportBusinessAccountRule(
     private val account: Account,
-    private val countryRegulations: CountryRegulations
+    private val regulationEngine: RegulationEngine
 ) : Rule {
     override fun check() {
         val country = account.country
         try {
-            if (!countryRegulations.get(country).supportsBusinessAccount) {
+            if (!regulationEngine.country(country).supportsBusinessAccount) {
                 throw notSupported(country)
             }
         } catch (ex: CountryNotSupportedException) {
