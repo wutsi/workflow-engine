@@ -4,22 +4,23 @@ import com.wutsi.platform.core.stream.EventStream
 
 abstract class AbstractWorkflow<Req, Resp, Ev>(private val eventStream: EventStream) : Workflow<Req, Resp> {
     protected abstract fun getEventType(): String?
-    protected abstract fun toEventPayload(context: WorkflowContext<Req, Resp>): Ev?
-    protected abstract fun getValidationRules(context: WorkflowContext<Req, Resp>): RuleSet
-    protected abstract fun doExecute(context: WorkflowContext<Req, Resp>)
+    protected abstract fun toEventPayload(request: Req, response: Resp, context: WorkflowContext): Ev?
+    protected abstract fun getValidationRules(request: Req, context: WorkflowContext): RuleSet
+    protected abstract fun doExecute(request: Req, context: WorkflowContext): Resp
 
-    override fun execute(context: WorkflowContext<Req, Resp>) {
-        validate(context)
-        doExecute(context)
+    override fun execute(request: Req, context: WorkflowContext): Resp {
+        validate(request, context)
+        val response = doExecute(request, context)
         val urn = getEventType()
         if (urn != null) {
-            toEventPayload(context)?.let {
+            toEventPayload(request, response, context)?.let {
                 eventStream.publish(urn, it)
             }
         }
+        return response
     }
 
-    private fun validate(context: WorkflowContext<Req, Resp>) {
-        getValidationRules(context).check()
+    private fun validate(request: Req, context: WorkflowContext) {
+        getValidationRules(request, context).check()
     }
 }
