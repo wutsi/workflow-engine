@@ -27,6 +27,7 @@ class CountryShouldSupportBusinessAccountRule(
         error = Error(
             code = ErrorURN.BUSINESS_ACCOUNT_NOT_SUPPORTED_IN_COUNTRY.urn,
             data = mapOf(
+                "account-id" to account.id,
                 "country" to country
             )
         ),

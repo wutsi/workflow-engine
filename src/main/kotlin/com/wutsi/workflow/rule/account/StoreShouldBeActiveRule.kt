@@ -12,7 +12,10 @@ class StoreShouldBeActiveRule(private val store: Store) : Rule {
         if (store.status != AccountStatus.ACTIVE.name) {
             throw ConflictException(
                 error = Error(
-                    code = ErrorURN.STORE_NOT_ACTIVE.urn
+                    code = ErrorURN.STORE_NOT_ACTIVE.urn,
+                    data = mapOf(
+                        "store-id" to store.id
+                    )
                 )
             )
         }

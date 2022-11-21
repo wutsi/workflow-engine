@@ -11,7 +11,10 @@ class AccountShouldNotBeBusinessRule(private val account: Account) : Rule {
         if (account.business) {
             throw ConflictException(
                 error = Error(
-                    code = ErrorURN.MEMBER_ALREADY_BUSINESS.urn
+                    code = ErrorURN.MEMBER_ALREADY_BUSINESS.urn,
+                    data = mapOf(
+                        "account-id" to account.id
+                    )
                 )
             )
         }

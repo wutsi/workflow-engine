@@ -15,7 +15,10 @@ class StoreShouldNotHaveTooManyProductsRule(
         if (store.productCount >= regulationEngine.maxProducts()) {
             throw ConflictException(
                 error = Error(
-                    code = ErrorURN.PRODUCT_LIMIT_REACHED.urn
+                    code = ErrorURN.PRODUCT_LIMIT_REACHED.urn,
+                    data = mapOf(
+                        "store-id" to store.id
+                    )
                 )
             )
         }

@@ -12,7 +12,10 @@ class AccountShouldBeOwnerOfProductRule(private val account: Account, private va
         if (account.storeId != product.storeId) {
             throw ForbiddenException(
                 error = Error(
-                    code = ErrorURN.PRODUCT_NOT_OWNER.urn
+                    code = ErrorURN.PRODUCT_NOT_OWNER.urn,
+                    data = mapOf(
+                        "account-id" to account.id
+                    )
                 )
             )
         }

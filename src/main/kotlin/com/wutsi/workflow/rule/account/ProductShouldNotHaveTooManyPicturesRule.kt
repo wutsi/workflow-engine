@@ -15,7 +15,10 @@ class ProductShouldNotHaveTooManyPicturesRule(
         if (product.pictures.size >= regulationEngine.maxPictures()) {
             throw ConflictException(
                 error = Error(
-                    code = ErrorURN.PICTURE_LIMIT_REACHED.urn
+                    code = ErrorURN.PICTURE_LIMIT_REACHED.urn,
+                    data = mapOf(
+                        "product-id" to product.id
+                    )
                 )
             )
         }

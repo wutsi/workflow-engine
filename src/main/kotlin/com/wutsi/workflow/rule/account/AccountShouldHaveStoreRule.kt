@@ -11,7 +11,10 @@ class AccountShouldHaveStoreRule(private val account: Account) : Rule {
         if (account.storeId == null) {
             throw ConflictException(
                 error = Error(
-                    code = ErrorURN.NO_STORE.urn
+                    code = ErrorURN.NO_STORE.urn,
+                    data = mapOf(
+                        "account-id" to account.id
+                    )
                 )
             )
         }

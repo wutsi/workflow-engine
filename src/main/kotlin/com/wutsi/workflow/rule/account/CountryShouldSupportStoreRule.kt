@@ -27,6 +27,7 @@ class CountryShouldSupportStoreRule(
         error = Error(
             code = ErrorURN.STORE_NOT_SUPPORTED_IN_COUNTRY.urn,
             data = mapOf(
+                "account-id" to account.id,
                 "country" to country
             )
         ),

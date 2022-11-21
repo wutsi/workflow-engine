@@ -12,7 +12,10 @@ class AccountShouldNotBeSuspendedRule(private val account: Account) : Rule {
         if (account.status == AccountStatus.SUSPENDED.name) {
             throw ConflictException(
                 error = Error(
-                    code = ErrorURN.MEMBER_SUSPENDED.urn
+                    code = ErrorURN.MEMBER_SUSPENDED.urn,
+                    data = mapOf(
+                        "account-id" to account.id
+                    )
                 )
             )
         }
