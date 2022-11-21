@@ -19,6 +19,8 @@ enum class ErrorURN(val urn: String) {
     PRODUCT_NOT_FOUND("urn:wutsi:error:product-not-found"),
     PRODUCT_NOT_OWNER("urn:wutsi:error:product-not-owner"),
     PRODUCT_LIMIT_REACHED("urn:wutsi:error:product-limit-reached"),
+    PRODUCT_PICTURE_MISSING("urn:wutsi:error:product-pictures-missing"),
+    PRODUCT_NO_STOCK("urn:wutsi:error:product-no-store"),
 
     STORE_NOT_ACTIVE("urn:wutsi:error:store-not-active"),
     STORE_NOT_SUPPORTED_IN_COUNTRY("urn:wutsi:error:store-not-supported-in-country"),
