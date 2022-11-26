@@ -1,11 +1,11 @@
 package com.wutsi.workflow.rule.account
 
+import com.wutsi.error.ErrorURN
 import com.wutsi.marketplace.access.dto.Store
 import com.wutsi.membership.access.dto.Account
 import com.wutsi.platform.core.error.Error
 import com.wutsi.platform.core.error.exception.ForbiddenException
 import com.wutsi.workflow.Rule
-import com.wutsi.workflow.error.ErrorURN
 
 class AccountShouldBeOwnerOfStoreRule(private val account: Account, private val store: Store) : Rule {
     override fun check() {

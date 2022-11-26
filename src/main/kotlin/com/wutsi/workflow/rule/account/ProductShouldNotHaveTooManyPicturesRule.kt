@@ -1,11 +1,11 @@
 package com.wutsi.workflow.rule.account
 
+import com.wutsi.error.ErrorURN
 import com.wutsi.marketplace.access.dto.Product
 import com.wutsi.platform.core.error.Error
 import com.wutsi.platform.core.error.exception.ConflictException
 import com.wutsi.regulation.RegulationEngine
 import com.wutsi.workflow.Rule
-import com.wutsi.workflow.error.ErrorURN
 
 class ProductShouldNotHaveTooManyPicturesRule(
     private val product: Product,
