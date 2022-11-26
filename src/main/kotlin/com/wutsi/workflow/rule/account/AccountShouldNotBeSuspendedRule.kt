@@ -1,7 +1,7 @@
 package com.wutsi.workflow.rule.account
 
+import com.wutsi.enums.AccountStatus
 import com.wutsi.membership.access.dto.Account
-import com.wutsi.membership.access.enums.AccountStatus
 import com.wutsi.platform.core.error.Error
 import com.wutsi.platform.core.error.exception.ConflictException
 import com.wutsi.workflow.Rule
