@@ -1,21 +1,23 @@
 package com.wutsi.workflow.rule.account
 
-import com.wutsi.enums.AccountStatus
+import com.wutsi.checkout.access.dto.Business
+import com.wutsi.enums.BusinessStatus
 import com.wutsi.error.ErrorURN
-import com.wutsi.membership.access.dto.Account
 import com.wutsi.platform.core.error.Error
 import com.wutsi.platform.core.error.exception.ConflictException
 import com.wutsi.workflow.Rule
 
-class AccountShouldBeActiveRule(private val account: Account) : Rule {
+class BusinessShouldBeActive(
+    private val business: Business
+) : Rule {
     override fun check() {
-        if (account.status != AccountStatus.ACTIVE.name) {
+        if (business.status != BusinessStatus.ACTIVE.name) {
             throw ConflictException(
                 error = Error(
-                    code = ErrorURN.MEMBER_NOT_ACTIVE.urn,
+                    code = ErrorURN.BUSINESS_NOT_ACTIVE.urn,
                     data = mapOf(
-                        "account-id" to account.id,
-                        "account-status" to account.status
+                        "business-id" to business.id,
+                        "business-status" to business.status
                     )
                 )
             )

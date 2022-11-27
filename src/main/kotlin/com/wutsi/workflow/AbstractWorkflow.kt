@@ -2,7 +2,7 @@ package com.wutsi.workflow
 
 import com.wutsi.platform.core.stream.EventStream
 
-abstract class AbstractWorkflow<Req, Resp, Ev>(private val eventStream: EventStream) : Workflow<Req, Resp> {
+abstract class AbstractWorkflow<Req, Resp, Ev>(protected val eventStream: EventStream) : Workflow<Req, Resp> {
     protected abstract fun getEventType(): String?
     protected abstract fun toEventPayload(request: Req, response: Resp, context: WorkflowContext): Ev?
     protected abstract fun getValidationRules(request: Req, context: WorkflowContext): RuleSet
