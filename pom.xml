@@ -32,7 +32,6 @@
         <wutsi-errors.version>1.0.6</wutsi-errors.version>
     </properties>
 
-
     <dependencies>
         <dependency>
             <groupId>com.wutsi</groupId>
