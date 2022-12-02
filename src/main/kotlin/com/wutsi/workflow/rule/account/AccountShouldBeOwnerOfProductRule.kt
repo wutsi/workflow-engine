@@ -9,7 +9,7 @@ import com.wutsi.workflow.Rule
 
 class AccountShouldBeOwnerOfProductRule(private val account: Account, private val product: Product) : Rule {
     override fun check() {
-        if (account.storeId != product.storeId) {
+        if (account.storeId != product.store.id) {
             throw ForbiddenException(
                 error = Error(
                     code = ErrorURN.PRODUCT_NOT_OWNER.urn,
