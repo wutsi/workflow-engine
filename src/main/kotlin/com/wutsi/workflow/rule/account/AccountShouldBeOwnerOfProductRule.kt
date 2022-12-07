@@ -14,7 +14,8 @@ class AccountShouldBeOwnerOfProductRule(private val account: Account, private va
                 error = Error(
                     code = ErrorURN.PRODUCT_NOT_OWNER.urn,
                     data = mapOf(
-                        "account-id" to account.id
+                        "account-id" to account.id,
+                        "product-id" to product.id,
                     )
                 )
             )

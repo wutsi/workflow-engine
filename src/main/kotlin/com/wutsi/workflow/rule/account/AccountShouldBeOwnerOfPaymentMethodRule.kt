@@ -1,21 +1,22 @@
 package com.wutsi.workflow.rule.account
 
+import com.wutsi.checkout.access.dto.PaymentMethod
 import com.wutsi.error.ErrorURN
-import com.wutsi.marketplace.access.dto.Store
 import com.wutsi.membership.access.dto.Account
 import com.wutsi.platform.core.error.Error
 import com.wutsi.platform.core.error.exception.ForbiddenException
 import com.wutsi.workflow.Rule
 
-class AccountShouldBeOwnerOfStoreRule(private val account: Account, private val store: Store) : Rule {
+class AccountShouldBeOwnerOfPaymentMethodRule(private val account: Account, private val paymentMethod: PaymentMethod) :
+    Rule {
     override fun check() {
-        if (account.id != store.accountId) {
+        if (account.id != paymentMethod.accountId) {
             throw ForbiddenException(
                 error = Error(
-                    code = ErrorURN.STORE_NOT_OWNER.urn,
+                    code = ErrorURN.PAYMENT_METHOD_NOT_OWNER.urn,
                     data = mapOf(
                         "account-id" to account.id,
-                        "store-id" to store.id
+                        "payment-method-token" to paymentMethod.token
                     )
                 )
             )
