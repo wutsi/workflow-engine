@@ -31,7 +31,7 @@
         <wutsi-mail.version>1.0.1</wutsi-mail.version>
         <wutsi-marketplace-access.version>1.0.16</wutsi-marketplace-access.version>
         <wutsi-membership-access.version>1.0.20</wutsi-membership-access.version>
-        <wutsi-checkout-access.version>1.0.26</wutsi-checkout-access.version>
+        <wutsi-checkout-access.version>1.0.27</wutsi-checkout-access.version>
     </properties>
 
     <dependencies>
