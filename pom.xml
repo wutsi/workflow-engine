@@ -5,7 +5,7 @@
 
     <artifactId>workflow-engine</artifactId>
     <groupId>com.wutsi.workflow</groupId>
-    <version>1.0.37-SNAPSHOT</version>
+    <version>1.0.38-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>workflow-engine</name>
