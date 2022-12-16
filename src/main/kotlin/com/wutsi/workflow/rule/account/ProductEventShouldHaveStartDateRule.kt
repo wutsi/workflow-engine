@@ -11,7 +11,10 @@ class ProductEventShouldHaveStartDateRule(
     private val product: Product
 ) : Rule {
     override fun check() {
-        if (product.type == ProductType.EVENT.name && product.event?.starts != null) {
+        if (
+            product.type == ProductType.EVENT.name &&
+            product.event?.starts == null
+        ) {
             throw ConflictException(
                 error = Error(
                     code = ErrorURN.PRODUCT_EVENT_NO_START_DATE.urn,
