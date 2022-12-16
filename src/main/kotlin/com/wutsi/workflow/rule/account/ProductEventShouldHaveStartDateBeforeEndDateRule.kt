@@ -14,7 +14,7 @@ class ProductEventShouldHaveStartDateBeforeEndDateRule(
         if (
             product.type == ProductType.EVENT.name &&
             product.event?.starts != null &&
-            product.event?.ends == null &&
+            product.event?.ends != null &&
             product.event?.starts?.isBefore(product.event?.ends) == true
         ) {
             throw ConflictException(

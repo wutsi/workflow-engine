@@ -12,8 +12,9 @@ class ProductEventShouldHaveMeetingIdRule(
 ) : Rule {
     override fun check() {
         if (
-            product.type == ProductType.EVENT.name && product.event?.online == true &&
-            product.event?.meetingId != null
+            product.type == ProductType.EVENT.name &&
+            product.event?.online == true &&
+            product.event?.meetingId.isNullOrEmpty()
         ) {
             throw ConflictException(
                 error = Error(
