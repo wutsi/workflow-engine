@@ -13,7 +13,7 @@ class ProductEventShouldHaveEndDateRule(
     override fun check() {
         if (
             product.type == ProductType.EVENT.name &&
-            product.event?.ends != null
+            product.event?.ends == null
         ) {
             throw ConflictException(
                 error = Error(
