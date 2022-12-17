@@ -15,11 +15,11 @@ class ProductEventShouldHaveStartDateBeforeEndDateRule(
             product.type == ProductType.EVENT.name &&
             product.event?.starts != null &&
             product.event?.ends != null &&
-            product.event?.starts?.isBefore(product.event?.ends) == true
+            product.event?.ends?.isBefore(product.event?.starts) == true
         ) {
             throw ConflictException(
                 error = Error(
-                    code = ErrorURN.PRODUCT_EVENT_NO_START_DATE.urn,
+                    code = ErrorURN.PRODUCT_EVENT_END_DATE_BEFORE_START_DATE.urn,
                     data = mapOf(
                         "product-id" to product.id
                     )

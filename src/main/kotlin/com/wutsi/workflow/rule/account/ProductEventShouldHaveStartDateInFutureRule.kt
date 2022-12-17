@@ -14,11 +14,11 @@ class ProductEventShouldHaveStartDateInFutureRule(
     override fun check() {
         if (
             product.type == ProductType.EVENT.name &&
-            product.event?.starts?.isAfter(OffsetDateTime.now()) == true
+            product.event?.starts?.isBefore(OffsetDateTime.now()) == true
         ) {
             throw ConflictException(
                 error = Error(
-                    code = ErrorURN.PRODUCT_EVENT_NO_START_DATE.urn,
+                    code = ErrorURN.PRODUCT_EVENT_START_DATE_IN_PAST.urn,
                     data = mapOf(
                         "product-id" to product.id
                     )
