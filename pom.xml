@@ -1,270 +1,273 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>workflow-engine</artifactId>
-    <groupId>com.wutsi.workflow</groupId>
-    <version>1.0.51-SNAPSHOT</version>
-    <packaging>jar</packaging>
+  <artifactId>workflow-engine</artifactId>
+  <groupId>com.wutsi.workflow</groupId>
+  <version>1.0.51-SNAPSHOT</version>
+  <packaging>jar</packaging>
 
-    <name>workflow-engine</name>
+  <name>workflow-engine</name>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jacoco.threshold.line>0.88</jacoco.threshold.line>
-        <jacoco.threshold.class>0.88</jacoco.threshold.class>
-        <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
-        <kotlin.code.style>official</kotlin.code.style>
-        <kotlin.compiler.jvmTarget>11</kotlin.compiler.jvmTarget>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jacoco.threshold.line>0.88</jacoco.threshold.line>
+    <jacoco.threshold.class>0.88</jacoco.threshold.class>
+    <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
+    <kotlin.code.style>official</kotlin.code.style>
+    <kotlin.compiler.jvmTarget>11</kotlin.compiler.jvmTarget>
 
-        <junit.version>5.9.1</junit.version>
-        <klint.version>0.48.0</klint.version>
-        <kotlin.version>1.7.22</kotlin.version>
-        <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
+    <junit.version>5.9.1</junit.version>
+    <klint.version>0.48.0</klint.version>
+    <kotlin.version>1.7.22</kotlin.version>
+    <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
 
-        <wutsi-platform-core.version>0.0.191</wutsi-platform-core.version>
-        <wutsi-enums.version>1.0.19</wutsi-enums.version>
-        <wutsi-errors.version>1.0.13</wutsi-errors.version>
-        <wutsi-events.version>1.0.13</wutsi-events.version>
-        <wutsi-regulation.version>1.0.12</wutsi-regulation.version>
-        <wutsi-mail.version>1.0.3</wutsi-mail.version>
-        <wutsi-marketplace-access.version>1.0.24</wutsi-marketplace-access.version>
-        <wutsi-membership-access.version>1.0.20</wutsi-membership-access.version>
-        <wutsi-checkout-access.version>1.0.29</wutsi-checkout-access.version>
-    </properties>
+    <wutsi-platform-core.version>0.0.195</wutsi-platform-core.version>
+    <wutsi-enums.version>1.0.19</wutsi-enums.version>
+    <wutsi-errors.version>1.0.13</wutsi-errors.version>
+    <wutsi-events.version>1.0.13</wutsi-events.version>
+    <wutsi-regulation.version>1.0.12</wutsi-regulation.version>
+    <wutsi-mail.version>1.0.3</wutsi-mail.version>
+    <wutsi-marketplace-access.version>1.0.24</wutsi-marketplace-access.version>
+    <wutsi-membership-access.version>1.0.20</wutsi-membership-access.version>
+    <wutsi-checkout-access.version>1.0.29</wutsi-checkout-access.version>
+  </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.wutsi</groupId>
-            <artifactId>wutsi-platform-core</artifactId>
-            <version>${wutsi-platform-core.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.wutsi</groupId>
-            <artifactId>wutsi-enums</artifactId>
-            <version>${wutsi-enums.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.wutsi</groupId>
-            <artifactId>wutsi-events</artifactId>
-            <version>${wutsi-events.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.wutsi</groupId>
-            <artifactId>wutsi-errors</artifactId>
-            <version>${wutsi-errors.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.wutsi.regulation</groupId>
-            <artifactId>regulation-engine</artifactId>
-            <version>${wutsi-regulation.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.wutsi.mail</groupId>
-            <artifactId>mail-engine</artifactId>
-            <version>${wutsi-mail.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.wutsi.membership.access</groupId>
-            <artifactId>membership-access-sdk-kotlin</artifactId>
-            <version>${wutsi-membership-access.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.wutsi.marketplace.access</groupId>
-            <artifactId>marketplace-access-sdk-kotlin</artifactId>
-            <version>${wutsi-marketplace-access.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.wutsi.checkout.access</groupId>
-            <artifactId>checkout-access-sdk-kotlin</artifactId>
-            <version>${wutsi-checkout-access.version}</version>
-        </dependency>
+  <dependencies>
+    <dependency>
+      <groupId>com.wutsi</groupId>
+      <artifactId>wutsi-platform-core</artifactId>
+      <version>${wutsi-platform-core.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.wutsi</groupId>
+      <artifactId>wutsi-enums</artifactId>
+      <version>${wutsi-enums.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.wutsi</groupId>
+      <artifactId>wutsi-events</artifactId>
+      <version>${wutsi-events.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.wutsi</groupId>
+      <artifactId>wutsi-errors</artifactId>
+      <version>${wutsi-errors.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.wutsi.regulation</groupId>
+      <artifactId>regulation-engine</artifactId>
+      <version>${wutsi-regulation.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.wutsi.mail</groupId>
+      <artifactId>mail-engine</artifactId>
+      <version>${wutsi-mail.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.wutsi.membership.access</groupId>
+      <artifactId>membership-access-sdk-kotlin</artifactId>
+      <version>${wutsi-membership-access.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.wutsi.marketplace.access</groupId>
+      <artifactId>marketplace-access-sdk-kotlin</artifactId>
+      <version>${wutsi-marketplace-access.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.wutsi.checkout.access</groupId>
+      <artifactId>checkout-access-sdk-kotlin</artifactId>
+      <version>${wutsi-checkout-access.version}</version>
+    </dependency>
 
-        <dependency>
-            <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-test-junit5</artifactId>
-            <version>${kotlin.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-stdlib-jdk8</artifactId>
-            <version>${kotlin.version}</version>
-        </dependency>
+    <dependency>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <artifactId>kotlin-test-junit5</artifactId>
+      <version>${kotlin.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <artifactId>kotlin-stdlib-jdk8</artifactId>
+      <version>${kotlin.version}</version>
+    </dependency>
 
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-test-junit5</artifactId>
-            <version>${kotlin.version}</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <artifactId>kotlin-test-junit5</artifactId>
+      <version>${kotlin.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
 
-    <scm>
-        <developerConnection>scm:git:https://github.com/wutsi/workflow-engine.git</developerConnection>
-        <tag>HEAD</tag>
-    </scm>
-    <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>GitHub Maven Packages</name>
-            <url>https://maven.pkg.github.com/wutsi/workflow-engine</url>
-        </repository>
-    </distributionManagement>
+  <scm>
+    <developerConnection>scm:git:https://github.com/wutsi/workflow-engine.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub Maven Packages</name>
+      <url>https://maven.pkg.github.com/wutsi/workflow-engine</url>
+    </repository>
+  </distributionManagement>
 
 
-    <repositories>
-        <repository>
-            <id>maven</id>
-            <name>maven</name>
-            <url>https://repo1.maven.org/maven2</url>
-        </repository>
-        <repository>
-            <id>github</id>
-            <url>https://maven.pkg.github.com/wutsi/*</url>
-        </repository>
-    </repositories>
+  <repositories>
+    <repository>
+      <id>maven</id>
+      <name>maven</name>
+      <url>https://repo1.maven.org/maven2</url>
+    </repository>
+    <repository>
+      <id>github</id>
+      <url>https://maven.pkg.github.com/wutsi/*</url>
+    </repository>
+  </repositories>
 
-    <build>
-        <sourceDirectory>src/main/kotlin</sourceDirectory>
-        <testSourceDirectory>src/test/kotlin</testSourceDirectory>
-        <plugins>
-            <plugin>
-                <groupId>org.jetbrains.kotlin</groupId>
-                <artifactId>kotlin-maven-plugin</artifactId>
-                <version>${kotlin.version}</version>
-                <executions>
-                    <execution>
-                        <id>compile</id>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>compile</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>test-compile</id>
-                        <phase>test-compile</phase>
-                        <goals>
-                            <goal>test-compile</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.2</version>
-            </plugin>
-            <plugin>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <version>2.22.2</version>
-            </plugin>
+  <build>
+    <sourceDirectory>src/main/kotlin</sourceDirectory>
+    <testSourceDirectory>src/test/kotlin</testSourceDirectory>
+    <plugins>
+      <plugin>
+        <groupId>org.jetbrains.kotlin</groupId>
+        <artifactId>kotlin-maven-plugin</artifactId>
+        <version>${kotlin.version}</version>
+        <executions>
+          <execution>
+            <id>compile</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>test-compile</id>
+            <phase>test-compile</phase>
+            <goals>
+              <goal>test-compile</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.22.2</version>
+      </plugin>
+      <plugin>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <version>2.22.2</version>
+      </plugin>
 
-            <!-- Code Coverage -->
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>${jacoco-maven-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>default-prepare-agent</id>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>check</id>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>jacoco-report</id>
-                        <phase>post-integration-test</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <excludes>
-                        <exclude>**/config/*</exclude>
-                        <exclude>**/Application*</exclude>
-                    </excludes>
-                    <rules>
-                        <rule implementation="org.jacoco.maven.RuleConfiguration">
-                            <element>BUNDLE</element>
-                            <limits>
-                                <limit>
-                                    <counter>LINE</counter>
-                                    <value>COVEREDRATIO</value>
-                                    <minimum>${jacoco.threshold.line}</minimum>
-                                </limit>
-                                <limit>
-                                    <counter>CLASS</counter>
-                                    <value>COVEREDRATIO</value>
-                                    <minimum>${jacoco.threshold.class}</minimum>
-                                </limit>
-                            </limits>
-                        </rule>
-                    </rules>
-                </configuration>
-            </plugin>
+      <!-- Code Coverage -->
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>${jacoco-maven-plugin.version}</version>
+        <executions>
+          <execution>
+            <id>default-prepare-agent</id>
+            <goals>
+              <goal>prepare-agent</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>check</id>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>jacoco-report</id>
+            <phase>post-integration-test</phase>
+            <goals>
+              <goal>report</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <excludes>
+            <exclude>**/config/*</exclude>
+            <exclude>**/Application*</exclude>
+          </excludes>
+          <rules>
+            <rule implementation="org.jacoco.maven.RuleConfiguration">
+              <element>BUNDLE</element>
+              <limits>
+                <limit>
+                  <counter>LINE</counter>
+                  <value>COVEREDRATIO</value>
+                  <minimum>${jacoco.threshold.line}</minimum>
+                </limit>
+                <limit>
+                  <counter>CLASS</counter>
+                  <value>COVEREDRATIO</value>
+                  <minimum>${jacoco.threshold.class}</minimum>
+                </limit>
+              </limits>
+            </rule>
+          </rules>
+        </configuration>
+      </plugin>
 
-            <!-- Linter -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <version>${maven-antrun-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>ktlint</id>
-                        <phase>validate</phase>
-                        <configuration>
-                            <target name="ktlint">
-                                <java taskname="ktlint" dir="${basedir}" fork="true" failonerror="true" classname="com.pinterest.ktlint.Main" classpathref="maven.plugin.classpath">
-                                    <arg value="src/**/*.kt" />
-                                    <!-- to generate report in checkstyle format prepend following args: -->
-                                    <arg value="--reporter=plain" />
-                                    <arg value="--reporter=checkstyle,output=${project.build.directory}/ktlint.xml" />
+      <!-- Linter -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>${maven-antrun-plugin.version}</version>
+        <executions>
+          <execution>
+            <id>ktlint</id>
+            <phase>validate</phase>
+            <configuration>
+              <target name="ktlint">
+                <java taskname="ktlint" dir="${basedir}" fork="true" failonerror="true"
+                      classname="com.pinterest.ktlint.Main" classpathref="maven.plugin.classpath">
+                  <arg value="src/**/*.kt"/>
+                  <!-- to generate report in checkstyle format prepend following args: -->
+                  <arg value="--reporter=plain"/>
+                  <arg value="--reporter=checkstyle,output=${project.build.directory}/ktlint.xml"/>
 
-                                    <!-- see https://github.com/pinterest/ktlint#usage for more -->
-                                </java>
-                            </target>
-                        </configuration>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>ktlint-format</id>
-                        <configuration>
-                            <target name="ktlint">
-                                <java taskname="ktlint" dir="${basedir}" fork="true" failonerror="true" classname="com.pinterest.ktlint.Main" classpathref="maven.plugin.classpath">
-                                    <arg value="-F" />
-                                    <arg value="src/**/*.kt" />
-                                </java>
-                            </target>
-                        </configuration>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.pinterest</groupId>
-                        <artifactId>ktlint</artifactId>
-                        <version>${klint.version}</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-        </plugins>
-    </build>
+                  <!-- see https://github.com/pinterest/ktlint#usage for more -->
+                </java>
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>ktlint-format</id>
+            <configuration>
+              <target name="ktlint">
+                <java taskname="ktlint" dir="${basedir}" fork="true" failonerror="true"
+                      classname="com.pinterest.ktlint.Main" classpathref="maven.plugin.classpath">
+                  <arg value="-F"/>
+                  <arg value="src/**/*.kt"/>
+                </java>
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+        <dependencies>
+          <dependency>
+            <groupId>com.pinterest</groupId>
+            <artifactId>ktlint</artifactId>
+            <version>${klint.version}</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>
