@@ -1,7 +1,7 @@
 package com.wutsi.workflow
 
 class RuleSet(
-    private val rules: List<Rule>
+    private val rules: List<Rule>,
 ) : Rule {
     companion object {
         val NONE = RuleSet(emptyList())

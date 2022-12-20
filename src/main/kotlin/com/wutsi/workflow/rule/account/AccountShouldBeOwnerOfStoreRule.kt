@@ -15,9 +15,9 @@ class AccountShouldBeOwnerOfStoreRule(private val account: Account, private val 
                     code = ErrorURN.STORE_NOT_OWNER.urn,
                     data = mapOf(
                         "account-id" to account.id,
-                        "store-id" to store.id
-                    )
-                )
+                        "store-id" to store.id,
+                    ),
+                ),
             )
         }
     }

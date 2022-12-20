@@ -8,7 +8,7 @@ import com.wutsi.platform.core.error.exception.ConflictException
 import com.wutsi.workflow.Rule
 
 class ProductEventShouldHaveStartDateBeforeEndDateRule(
-    private val product: Product
+    private val product: Product,
 ) : Rule {
     override fun check() {
         if (
@@ -21,9 +21,9 @@ class ProductEventShouldHaveStartDateBeforeEndDateRule(
                 error = Error(
                     code = ErrorURN.PRODUCT_EVENT_END_DATE_BEFORE_START_DATE.urn,
                     data = mapOf(
-                        "product-id" to product.id
-                    )
-                )
+                        "product-id" to product.id,
+                    ),
+                ),
             )
         }
     }

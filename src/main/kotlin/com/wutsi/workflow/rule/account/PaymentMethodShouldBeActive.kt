@@ -8,14 +8,14 @@ import com.wutsi.platform.core.error.exception.ConflictException
 import com.wutsi.workflow.Rule
 
 class PaymentMethodShouldBeActive(
-    private val paymentMethod: PaymentMethod
+    private val paymentMethod: PaymentMethod,
 ) : Rule {
     override fun check() {
         if (paymentMethod.status != PaymentMethodStatus.ACTIVE.name) {
             throw ConflictException(
                 error = Error(
-                    code = ErrorURN.PAYMENT_METHOD_NOT_ACTIVE.urn
-                )
+                    code = ErrorURN.PAYMENT_METHOD_NOT_ACTIVE.urn,
+                ),
             )
         }
     }

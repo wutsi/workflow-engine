@@ -7,7 +7,7 @@ import com.wutsi.platform.core.error.exception.ConflictException
 import com.wutsi.workflow.Rule
 
 class ProductShouldHavePictureRule(
-    private val product: Product
+    private val product: Product,
 ) : Rule {
     override fun check() {
         if (product.pictures.isEmpty()) {
@@ -15,9 +15,9 @@ class ProductShouldHavePictureRule(
                 error = Error(
                     code = ErrorURN.PRODUCT_PICTURE_MISSING.urn,
                     data = mapOf(
-                        "product-id" to product.id
-                    )
-                )
+                        "product-id" to product.id,
+                    ),
+                ),
             )
         }
     }

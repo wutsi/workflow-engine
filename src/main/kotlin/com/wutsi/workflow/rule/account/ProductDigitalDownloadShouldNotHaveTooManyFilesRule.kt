@@ -9,7 +9,7 @@ import com.wutsi.workflow.Rule
 
 class ProductDigitalDownloadShouldNotHaveTooManyFilesRule(
     private val product: Product,
-    private val regulationEngine: RegulationEngine
+    private val regulationEngine: RegulationEngine,
 ) : Rule {
     override fun check() {
         if (product.files.size >= regulationEngine.maxDigitalDownloadFiles()) {
@@ -17,9 +17,9 @@ class ProductDigitalDownloadShouldNotHaveTooManyFilesRule(
                 error = Error(
                     code = ErrorURN.PRODUCT_DIGITAL_DOWNLOAD_LIMIT_REACHED.urn,
                     data = mapOf(
-                        "product-id" to product.id
-                    )
-                )
+                        "product-id" to product.id,
+                    ),
+                ),
             )
         }
     }

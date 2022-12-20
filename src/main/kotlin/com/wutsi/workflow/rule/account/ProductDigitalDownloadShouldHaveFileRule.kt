@@ -8,7 +8,7 @@ import com.wutsi.platform.core.error.exception.ConflictException
 import com.wutsi.workflow.Rule
 
 class ProductDigitalDownloadShouldHaveFileRule(
-    private val product: Product
+    private val product: Product,
 ) : Rule {
     override fun check() {
         if (
@@ -19,9 +19,9 @@ class ProductDigitalDownloadShouldHaveFileRule(
                 error = Error(
                     code = ErrorURN.PRODUCT_DIGITAL_DOWNLOAD_NO_FILE.urn,
                     data = mapOf(
-                        "product-id" to product.id
-                    )
-                )
+                        "product-id" to product.id,
+                    ),
+                ),
             )
         }
     }

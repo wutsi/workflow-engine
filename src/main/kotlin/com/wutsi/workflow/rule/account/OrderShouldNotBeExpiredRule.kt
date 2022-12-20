@@ -8,7 +8,7 @@ import com.wutsi.platform.core.error.exception.ConflictException
 import com.wutsi.workflow.Rule
 
 class OrderShouldNotBeExpiredRule(
-    private val order: Order
+    private val order: Order,
 ) : Rule {
     override fun check() {
         if (order.status == OrderStatus.EXPIRED.name) {
@@ -16,9 +16,9 @@ class OrderShouldNotBeExpiredRule(
                 error = Error(
                     code = ErrorURN.ORDER_EXPIRED.urn,
                     data = mapOf(
-                        "order-id" to order.id
-                    )
-                )
+                        "order-id" to order.id,
+                    ),
+                ),
             )
         }
     }

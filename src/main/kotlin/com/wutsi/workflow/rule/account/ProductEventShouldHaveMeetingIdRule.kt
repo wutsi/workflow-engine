@@ -8,7 +8,7 @@ import com.wutsi.platform.core.error.exception.ConflictException
 import com.wutsi.workflow.Rule
 
 class ProductEventShouldHaveMeetingIdRule(
-    private val product: Product
+    private val product: Product,
 ) : Rule {
     override fun check() {
         if (
@@ -20,9 +20,9 @@ class ProductEventShouldHaveMeetingIdRule(
                 error = Error(
                     code = ErrorURN.PRODUCT_EVENT_NO_MEETING_ID.urn,
                     data = mapOf(
-                        "product-id" to product.id
-                    )
-                )
+                        "product-id" to product.id,
+                    ),
+                ),
             )
         }
     }

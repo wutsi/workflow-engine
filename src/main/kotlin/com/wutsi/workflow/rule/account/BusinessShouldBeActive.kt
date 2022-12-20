@@ -8,7 +8,7 @@ import com.wutsi.platform.core.error.exception.ConflictException
 import com.wutsi.workflow.Rule
 
 class BusinessShouldBeActive(
-    private val business: Business
+    private val business: Business,
 ) : Rule {
     override fun check() {
         if (business.status != BusinessStatus.ACTIVE.name) {
@@ -17,9 +17,9 @@ class BusinessShouldBeActive(
                     code = ErrorURN.BUSINESS_NOT_ACTIVE.urn,
                     data = mapOf(
                         "business-id" to business.id,
-                        "business-status" to business.status
-                    )
-                )
+                        "business-status" to business.status,
+                    ),
+                ),
             )
         }
     }

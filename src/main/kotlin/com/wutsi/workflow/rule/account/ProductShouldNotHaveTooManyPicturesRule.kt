@@ -9,7 +9,7 @@ import com.wutsi.workflow.Rule
 
 class ProductShouldNotHaveTooManyPicturesRule(
     private val product: Product,
-    private val regulationEngine: RegulationEngine
+    private val regulationEngine: RegulationEngine,
 ) : Rule {
     override fun check() {
         if (product.pictures.size >= regulationEngine.maxPictures()) {
@@ -17,9 +17,9 @@ class ProductShouldNotHaveTooManyPicturesRule(
                 error = Error(
                     code = ErrorURN.PICTURE_LIMIT_REACHED.urn,
                     data = mapOf(
-                        "product-id" to product.id
-                    )
-                )
+                        "product-id" to product.id,
+                    ),
+                ),
             )
         }
     }

@@ -16,9 +16,9 @@ class AccountShouldBeOwnerOfPaymentMethodRule(private val account: Account, priv
                     code = ErrorURN.PAYMENT_METHOD_NOT_OWNER.urn,
                     data = mapOf(
                         "account-id" to account.id,
-                        "payment-method-token" to paymentMethod.token
-                    )
-                )
+                        "payment-method-token" to paymentMethod.token,
+                    ),
+                ),
             )
         }
     }

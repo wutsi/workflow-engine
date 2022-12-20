@@ -7,7 +7,7 @@ import com.wutsi.platform.core.error.exception.ConflictException
 import com.wutsi.workflow.Rule
 
 class ProductShouldHaveStockRule(
-    private val product: Product
+    private val product: Product,
 ) : Rule {
     override fun check() {
         if (product.quantity != null && product.quantity == 0) {
@@ -15,9 +15,9 @@ class ProductShouldHaveStockRule(
                 error = Error(
                     code = ErrorURN.PRODUCT_NO_STOCK.urn,
                     data = mapOf(
-                        "product-id" to product.id
-                    )
-                )
+                        "product-id" to product.id,
+                    ),
+                ),
             )
         }
     }

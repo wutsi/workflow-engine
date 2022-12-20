@@ -10,7 +10,7 @@ import com.wutsi.workflow.Rule
 
 class CountryShouldSupportStoreRule(
     private val account: Account,
-    private val regulationEngine: RegulationEngine
+    private val regulationEngine: RegulationEngine,
 ) : Rule {
     override fun check() {
         val country = account.country
@@ -28,9 +28,9 @@ class CountryShouldSupportStoreRule(
             code = ErrorURN.STORE_NOT_SUPPORTED_IN_COUNTRY.urn,
             data = mapOf(
                 "account-id" to account.id,
-                "country" to country
-            )
+                "country" to country,
+            ),
         ),
-        cause
+        cause,
     )
 }

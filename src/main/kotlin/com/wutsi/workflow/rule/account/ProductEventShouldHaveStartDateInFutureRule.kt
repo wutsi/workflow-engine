@@ -9,7 +9,7 @@ import com.wutsi.workflow.Rule
 import java.time.OffsetDateTime
 
 class ProductEventShouldHaveStartDateInFutureRule(
-    private val product: Product
+    private val product: Product,
 ) : Rule {
     override fun check() {
         if (
@@ -20,9 +20,9 @@ class ProductEventShouldHaveStartDateInFutureRule(
                 error = Error(
                     code = ErrorURN.PRODUCT_EVENT_START_DATE_IN_PAST.urn,
                     data = mapOf(
-                        "product-id" to product.id
-                    )
-                )
+                        "product-id" to product.id,
+                    ),
+                ),
             )
         }
     }

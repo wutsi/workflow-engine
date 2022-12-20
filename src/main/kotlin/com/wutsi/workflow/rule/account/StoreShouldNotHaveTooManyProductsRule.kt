@@ -9,7 +9,7 @@ import com.wutsi.workflow.Rule
 
 class StoreShouldNotHaveTooManyProductsRule(
     private val store: Store,
-    private val regulationEngine: RegulationEngine
+    private val regulationEngine: RegulationEngine,
 ) : Rule {
     override fun check() {
         if (store.productCount >= regulationEngine.maxProducts()) {
@@ -17,9 +17,9 @@ class StoreShouldNotHaveTooManyProductsRule(
                 error = Error(
                     code = ErrorURN.PRODUCT_LIMIT_REACHED.urn,
                     data = mapOf(
-                        "store-id" to store.id
-                    )
-                )
+                        "store-id" to store.id,
+                    ),
+                ),
             )
         }
     }

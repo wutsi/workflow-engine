@@ -15,9 +15,9 @@ class AccountShouldBeActiveRule(private val account: Account) : Rule {
                     code = ErrorURN.MEMBER_NOT_ACTIVE.urn,
                     data = mapOf(
                         "account-id" to account.id,
-                        "account-status" to account.status
-                    )
-                )
+                        "account-status" to account.status,
+                    ),
+                ),
             )
         }
     }

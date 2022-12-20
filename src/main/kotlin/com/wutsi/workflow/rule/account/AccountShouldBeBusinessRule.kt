@@ -13,9 +13,9 @@ class AccountShouldBeBusinessRule(private val account: Account) : Rule {
                 error = Error(
                     code = ErrorURN.MEMBER_NOT_BUSINESS.urn,
                     data = mapOf(
-                        "account-id" to account.id
-                    )
-                )
+                        "account-id" to account.id,
+                    ),
+                ),
             )
         }
     }

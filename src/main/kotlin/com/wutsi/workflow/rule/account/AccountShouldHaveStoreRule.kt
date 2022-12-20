@@ -13,9 +13,9 @@ class AccountShouldHaveStoreRule(private val account: Account) : Rule {
                 error = Error(
                     code = ErrorURN.NO_STORE.urn,
                     data = mapOf(
-                        "account-id" to account.id
-                    )
-                )
+                        "account-id" to account.id,
+                    ),
+                ),
             )
         }
     }

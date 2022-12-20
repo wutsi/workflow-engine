@@ -14,9 +14,9 @@ class StoreShouldBeActiveRule(private val store: Store) : Rule {
                 error = Error(
                     code = ErrorURN.STORE_NOT_ACTIVE.urn,
                     data = mapOf(
-                        "store-id" to store.id
-                    )
-                )
+                        "store-id" to store.id,
+                    ),
+                ),
             )
         }
     }

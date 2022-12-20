@@ -15,9 +15,9 @@ class AccountShouldBeOwnerOfOrder(private val account: Account, private val orde
                     code = ErrorURN.ORDER_NOT_OWNER.urn,
                     data = mapOf(
                         "account-id" to account.id,
-                        "order-id" to order.id
-                    )
-                )
+                        "order-id" to order.id,
+                    ),
+                ),
             )
         }
     }
