@@ -26,7 +26,7 @@
     <wutsi-platform-core.version>0.0.196</wutsi-platform-core.version>
     <wutsi-enums.version>1.0.22</wutsi-enums.version>
     <wutsi-errors.version>1.0.14</wutsi-errors.version>
-    <wutsi-events.version>1.0.14</wutsi-events.version>
+    <wutsi-events.version>1.0.15</wutsi-events.version>
     <wutsi-regulation.version>1.0.12</wutsi-regulation.version>
     <wutsi-mail.version>1.0.7</wutsi-mail.version>
     <wutsi-marketplace-access.version>1.0.26</wutsi-marketplace-access.version>
