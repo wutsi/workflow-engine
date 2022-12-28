@@ -19,7 +19,7 @@
 
     <junit.version>5.9.1</junit.version>
     <klint.version>0.48.0</klint.version>
-    <kotlin.version>1.7.22</kotlin.version>
+    <kotlin.version>1.8.0</kotlin.version>
     <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
 
     <wutsi-platform-core.version>0.0.196</wutsi-platform-core.version>
