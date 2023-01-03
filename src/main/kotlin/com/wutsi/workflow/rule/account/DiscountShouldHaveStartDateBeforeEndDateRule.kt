@@ -8,14 +8,12 @@ import com.wutsi.workflow.Rule
 
 class DiscountShouldHaveStartDateBeforeEndDateRule(private val discount: Discount) : Rule {
     override fun check() {
-        if (discount.ends.isBefore(discount.starts)) {
+        if (discount.ends != null && discount.starts != null && discount.ends!!.isBefore(discount.starts)) {
             throw ConflictException(
                 error = Error(
                     code = ErrorURN.DISCOUNT_INVALID_DATE.urn,
                     data = mapOf(
                         "discount-id" to discount.id,
-                        "discount-start-date" to discount.starts,
-                        "discount-end-date" to discount.ends,
                     ),
                 ),
             )
