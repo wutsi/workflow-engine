@@ -17,7 +17,7 @@
     <kotlin.code.style>official</kotlin.code.style>
     <kotlin.compiler.jvmTarget>11</kotlin.compiler.jvmTarget>
 
-    <junit.version>5.9.1</junit.version>
+    <junit.version>5.9.2</junit.version>
     <klint.version>0.48.1</klint.version>
     <kotlin.version>1.8.0</kotlin.version>
     <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
